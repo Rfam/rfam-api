@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  api:
+    build: .
+    volumes:
+      - ${RFAM_API_HOME}:/rfam-api/rfam-api
+    ports:
+      - "4000:4000"
