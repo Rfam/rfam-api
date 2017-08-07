@@ -65,6 +65,10 @@ RUN \
 # Expose a container port where the website is served
 EXPOSE 4000
 
+# Add helper command for setting up the environment for shell access
+RUN \
+    echo 'source $LOC/virtualenvs/rfam-api/bin/activate && cd $RFAM_API_HOME' > setup.sh
+
 # Start up the app
 ENTRYPOINT \
     source $LOC/virtualenvs/rfam-api/bin/activate && \
